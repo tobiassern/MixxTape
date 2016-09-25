@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Delete Playlist{% endblock %}
+{% block content %}
+<section class="hero-section" style="background-image: url({{ url_for('static', filename='img/bg_dj.jpg') }})">
+	<div class="hero-overlay"></div>
+	<div class="container hero-section-inner">
+		<h1>Delete Playlist</h1>
+		<p>Are you sure you want to delete playlist <strong>{{playlist.name}}</strong>?</p>
+		<form method="POST">
+		<button type="submit" class="btn btn-danger">Delete</button>
+		<p><small class="text-muted"><a href="{{url_for('singlePlaylistPage', playlist_id=playlist.id)}}">Cancel</a></small></p>
+		</form>
+	</div>
+</section>
+{% endblock %}

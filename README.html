@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+<h2 id="synopsis">Synopsis</h2>
+
+<p>This is a project created for the Fullstack Nanodegree Item Catalog project.</p>
+
+<p>Users can create playlists and add songs to their playlists. Which they can share with the world through facebook or twitter.</p>
+
+<p>When creating songs users can add links to spotify, deezer, apple music and youtube in order for the ones visiting the song to use the streaming service that suits them best.</p>
+
+<p>Songs are not owned by any user and thus can be added to any playlist when created.</p>
+
+<p>If a user removes a song from their playlist the song will not be deleted as it can be used in other playlists</p>
+
+<p>All users can contribute and edit a song another user has created in order to fix spellingerrors or adding / updating streaming links.</p>
+
+<h2 id="motivation">Motivation</h2>
+
+<p>This project enhanced my skills in python in general but sql, sqllite, sqlalchemy, json api endpoints, oAuth and social logins specifically.</p>
+
+<p>I also implemented for the fun of it a basic search function.</p>
+
+<h2 id="installation">Installation</h2>
+
+<p>This project is built using Vagrant
+A file for vagrant is already included in the files</p>
+
+<h3 id="settingupvagrant">Setting up vagrant</h3>
+
+<p>If you are new to vagrant you can see the docs here https://www.vagrantup.com/docs/getting-started/</p>
+
+<p>If you are familiar with vagrant and created your own Google Ouath Credentials do this</p>
+
+<h2 id="runningthisproject">Running this project</h2>
+
+<ol>
+<li>Download this github project</li>
+<li>Download the JSON file from your Google Oauth 2.0 Client&#8217;s ID</li>
+<li>Save the json file as client_secrets.json in the main folder (where main.py is)</li>
+<li>Run vagrant up in the folder</li>
+<li>The run vagrant ssh</li>
+<li>Go to /vagrant/lib</li>
+<li>Run $ python database_setup.py</li>
+<li>Go to /vagrant</li>
+<li>Run $ python main.py</li>
+</ol>
+
+<p>The project can now be reached at localhost:5600</p>
+
+<h1 id="license">License</h1>
+
+<p>The MIT License (MIT)</p>
+
+</body>
+</html>

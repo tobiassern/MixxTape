@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Profile{% endblock %}
+{% block content %}
+<section class="hero-section no-bg">
+	<div class="hero-overlay"></div>
+	<div class="container hero-section-inner">
+		<img class="profile-picture" src="{{user.picture}}">
+		<h1><small>{{user.name}}</small></h1>
+		<hr>
+		<h2><small>My Playlists</small></h2>
+		{% include '_playlists-grid.html' %}
+	</div>
+</section>
+{% endblock %}

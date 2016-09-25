@@ -1,0 +1,13 @@
+<!-- Building the share url with domain + request.path. domain is defined as a variable in pages.py -->
+<div class="social-share">
+	<h5>Share</h5>
+	<a href="https://www.facebook.com/sharer/sharer.php?u={{domain}}{{request.path}}"  target="_blank">
+		<i class="fa fa-facebook" aria-hidden="true"></i>
+	</a>
+	<a href="https://twitter.com/home?status={{domain}}{{request.path}}">
+		<i class="fa fa-twitter" aria-hidden="true"></i>
+	</a>
+</div>
+{% block scriptFooter %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+{% endblock %}

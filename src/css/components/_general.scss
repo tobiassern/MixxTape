@@ -1,0 +1,43 @@
+body {
+	font-size: $base-font-size;
+}
+
+.go-next-icon {
+	cursor: pointer;
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	bottom: 15px;
+	margin: auto;
+	background-color: #ffffff;
+	mask-image: url(/static/img/svg/point-down.svg);
+	mask-size: contain;
+	mask-repeat: no-repeat;
+	mask-position: center center;
+	left: calc(50% - 25px);
+	transition: transform $standard-transition;
+	&:hover {
+		transform: scale(1.1);
+	}
+	&:active, &:focus {
+		transform: scale(1.2);
+	}
+}
+
+.text-center {
+	text-align: center;
+}
+
+.notification-flash {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	z-index: 100;
+	pointer-events: none;
+	.message-alert-box {
+		.alert {
+			pointer-events: all;
+		}
+	}
+}
+

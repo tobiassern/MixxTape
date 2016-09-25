@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}Song{% endblock %}
+{% block content %}
+<section class="hero-section no-bg">
+	<div class="hero-overlay"></div>
+	<div class="container hero-section-inner">
+		<h1>{{song.title}} - {{song.artist}}</h1>
+		{% if 'username' in login_session %}
+		<p><a href="{{url_for('editSongPage', song_id=song.id)}}" class="btn btn-primary btn-sm">Edit Song</a></p>
+		{% endif %}
+		<div class="row">
+			<div class="col-md-4 offset-md-4">
+				{% if song.spotify_url %}
+				<div class="service-provider">
+					<a href="{{song.spotify_url}}" target="_blank">
+						<img class="service-icon" src="{{ url_for('static', filename='img/spotify_icon.png') }}"> Spotify
+					</a>
+				</div>
+				{% endif %}
+				{% if song.deezer_url %}
+				<div class="service-provider">
+					<a href="{{song.deezer_url}}" target="_blank">
+						<img class="service-icon" src="{{ url_for('static', filename='img/deezer_icon.png') }}"> Deezer
+					</a>
+				</div>
+				{% endif %}
+				{% if song.apple_music_url %}
+				<div class="service-provider">
+					<a href="{{song.apple_music_url}}" target="_blank">
+						<img class="service-icon" src="{{ url_for('static', filename='img/apple_music_icon.png') }}"> Apple Music
+					</a>
+				</div>
+				{% endif %}
+				{% if song.youtube_url %}
+				<div class="service-provider">
+					<a href="{{song.youtube_url}}" target="_blank">
+						<img class="service-icon" src="{{ url_for('static', filename='img/youtube_icon.png') }}"> YouTube
+					</a>
+				</div>
+				{% endif %}
+			</div>
+		</div>
+		{% include '_social-share.html' %}
+	</div>
+</section>
+{% endblock %}

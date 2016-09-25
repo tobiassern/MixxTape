@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %}Playlist {{playlist.name}}{% endblock %}
+{% block content %}
+{% if login_session.user_id == playlist.user_id %}
+	{% block scriptHead %}
+	<meta name="playlist_id" content="{{playlist.id}}">
+	{% endblock %}
+{% endif %}
+<section class="hero-section no-bg">
+	<div class="hero-overlay"></div>
+	<div class="container hero-section-inner">
+		<h1>{{playlist.name}}</h1>
+		{% if playlist.user.name %}
+		<p><small>Curated by: <a href="{{url_for('profilePage', user_id=playlist.user.id)}}">{{playlist.user.name}}</a></small></p>
+		{% endif %}
+		{% if login_session.user_id == playlist.user_id %}
+		<p>
+		<div class="btn-group btn-group-sm" role="group" aria-label="Edit Playlist">
+   			<a href="{{url_for('editPlaylistPage', playlist_id=playlist.id)}}" class="btn btn-primary">Edit</a>
+   	 		<a href="{{url_for('deletePlaylistPage', playlist_id=playlist.id)}}" class="btn btn-danger">Delete</a>
+  		</div>
+  		</p>
+		{% endif %}
+		<p>
+		{% for line in playlist.description.splitlines() %}
+        	{{line}}<br>
+    	{% endfor %}
+    	</p>
+    	<p><small class="text-muted">Songs</small></p>
+    	{% for song in playlistSongs %}
+    		<div class="single-song-list single-song-list-{{song.id}}">
+    			<p><a href="{{url_for('songPage', song_id=song.song.id)}}">{{song.song.title}} - {{song.song.artist}}</a>{% if login_session.user_id == playlist.user_id %} | <span class="remove-song" data-id="{{song.id}}"><i class="fa fa-trash-o" aria-hidden="true"></i></span>{% endif %}</p>
+    		</div>
+    	{% endfor %}
+		{% if login_session.user_id == playlist.user_id %}
+		<!-- if user is logged in and the owner of the playlist they can add new songs. Done with ajax -->
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 offset-md-4">
+					<form id="searchSong">
+						<div class="input-group">
+	                        <input type="text" id="songSearchInput" class="form-control" placeholder="Search song..." autocomplete="off">
+	                        <span class="input-group-btn">
+	                            <button class="btn btn-secondary" type="button">Search</button>
+	                        </span>
+                    	</div>
+                    	<div id="searchResult"></div>
+                    </form>
+				</div>
+			</div>
+		</div>
+		{% endif %}
+		{% include '_social-share.html' %}
+	</div>
+</section>
+{% endblock %}

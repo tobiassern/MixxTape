@@ -1,0 +1,11 @@
+.playlists-grid {
+	.playlist-card {
+		opacity: 0;
+		transform: translateY(150px);
+		transition: opacity .5s ease, transform .5s ease-out;
+		&.grid-card-loaded {
+			transform: translateY(0);
+			opacity: 1;
+		}
+	}
+}

@@ -1,0 +1,19 @@
+<div class="row playlists-grid">
+{% for playlist in playlists %}
+<div class="col-md-4 col-sm-12 col-xs-12 playlist-card">
+	<div class="card card-block">
+	  	<h4 class="card-title">{{playlist.name}}</h4>
+	  	<p class="card-text">
+	  	{% for line in playlist.description.splitlines() %}
+        	{{line}}<br>
+    	{% endfor %}
+    	</p>
+    	<p class="card-text"><small class="text-muted">Curated by <a href="{{url_for('profilePage', user_id=playlist.user.id)}}">{{playlist.user.name}}</a></small></p>
+	  	<a href="{{url_for('singlePlaylistPage', playlist_id=playlist.id)}}" class="card-link">View Playlist</a>
+	</div>
+</div>
+{% endfor %}
+</div>
+{% block scriptFooter %}
+<script src="{{ url_for('static', filename='js/masonry.pkgd.min-min.js') }}"> </script>
+{% endblock %}

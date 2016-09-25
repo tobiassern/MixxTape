@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Create Song{% endblock %}
+{% block content %}
+<section class="hero-section" style="background-image: url({{ url_for('static', filename='img/bg_dj.jpg') }})">
+	<div class="hero-overlay"></div>
+	<div class="container hero-section-inner">
+		<h1>Create Song</h1>
+		<div class="row">
+			<div class="col-md-4 offset-md-4">
+			<hr>
+				<form method="POST">
+	  				<div class="form-group">
+	  					<input type="text" class="form-control" id="songTitle" name="songTitle" placeholder="Title" required>
+	  				</div>
+	  				<div class="form-group">
+	  					<input type="text" class="form-control" id="songArtist" name="songArtist" placeholder="Artist" required>
+	  				</div>
+	  				<p><small class="form-text">Add the url's to the song for different service providers</small></p>
+	  				<div class="form-group">
+	  					<input type="url" class="form-control" id="songSpotify" name="songSpotify" placeholder="Spotify URL">
+	  				</div>
+	  				<div class="form-group">
+	  					<input type="url" class="form-control" id="songDeezer" name="songDeezer" placeholder="Deezer URL">
+	  				</div>
+  					<div class="form-group">
+	  					<input type="url" class="form-control" id="songAppleMusic" name="songAppleMusic" placeholder="Apple Music URL">
+	  				</div>
+  					<div class="form-group">
+	  					<input type="url" class="form-control" id="songYoutube" name="songYoutube" placeholder="Youtube URL">
+	  				</div>
+	  				<button type="submit" class="btn btn-primary btn-block">Create Song</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock %}

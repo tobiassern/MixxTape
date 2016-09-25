@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="696px" height="383px" viewBox="0 0 696 383" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="696" height="383" rx="15"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="696" height="383" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <rect id="path-3" x="31" y="49" width="629" height="173"></rect>
+        <mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="629" height="173" fill="white">
+            <use xlink:href="#path-3"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group">
+            <use id="Rectangle" stroke="#000000" mask="url(#mask-2)" stroke-width="6" xlink:href="#path-1"></use>
+            <circle id="Oval" stroke="#000000" stroke-width="3" cx="495.5" cy="278.5" r="59.5"></circle>
+            <path d="M232.07973,228.062812 C248.850419,238.585436 260,257.240656 260,278.5 C260,311.360943 233.360943,338 200.5,338 C167.639057,338 141,311.360943 141,278.5 C141,259.472646 149.931319,242.531314 163.830349,231.639611 L232.07973,228.062812 Z" id="Combined-Shape" stroke="#000000" stroke-width="3"></path>
+            <use id="Rectangle-2" stroke="#000000" mask="url(#mask-4)" stroke-width="4" transform="translate(345.500000, 135.500000) rotate(-3.000000) translate(-345.500000, -135.500000) " xlink:href="#path-3"></use>
+            <text id="MixxTape" transform="translate(345.500000, 132.500000) rotate(-3.000000) translate(-345.500000, -132.500000) " font-family="Lato-Regular, Lato" font-size="144" font-weight="normal" fill="#000000">
+                <tspan x="40.796" y="188">MixxTape</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,28 @@
+input.form-control {
+	border-color: #ccc;
+}
+
+#searchResult {
+	background-color: #ffffff;
+	color: #373a3c;
+	border-radius: 0.25rem;
+	position: absolute;
+	width: calc(100% - 30px);
+	a {
+		color: #0275d8;
+	}
+	p {
+		padding: 0.5rem;
+		margin: 0;
+		&.song-result {
+			cursor: pointer;
+			span {
+				font-size: 120%;
+				font-weight: 700;
+			}
+			&:hover {
+				background-color: #f7f7f7;
+			}
+		}
+	}
+}

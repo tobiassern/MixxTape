@@ -1,0 +1,4 @@
+config.codekit
+client_secrets.json
+.vagrant
+mixxtape.db

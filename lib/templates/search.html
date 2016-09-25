@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}Search{% endblock %}
+{% block content %}
+<section class="hero-section no-bg">
+	<div class="hero-overlay"></div>
+	<div class="container hero-section-inner">
+		<h1>Search {% if keyword %} for: <small>{{keyword}}</small>{% endif %}</h1>
+		<hr>
+		<div class="row">
+			<div class="col-md-6">
+				<h2>Playlists</h2>
+				{% if playlists %}
+					{% for playlist in playlists %}
+						<h5>{{playlist.name}}</h5>
+						<p>
+						{% for line in playlist.description.splitlines() %}
+        					{{line}}<br>
+    					{% endfor %}
+    					</p>
+						<p><a href="{{url_for('singlePlaylistPage', playlist_id=playlist.id)}}">View Playlist</a></p>
+					{% endfor %}
+				{% else %}
+				<p>No playlists found</p>
+				{% endif %}
+			</div>
+			<div class="col-md-6">
+				<h2>Songs</h2>
+				{% if songs %}
+					{% for song in songs %}
+						<p><a href="{{url_for('songPage', song_id=song.id)}}">
+						{{song.title}} - {{song.artist}}</a></p>
+					{% endfor %}
+				{% else %}
+				<p>No songs found</p>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock %}

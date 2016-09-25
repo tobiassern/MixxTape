@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+{% block scriptHead %}
+<script src="//apis.google.com/js/platform.js?onload=start"> </script>
+{% endblock %}
+{% block content %}
+<section class="hero-section" style="background-image: url({{ url_for('static', filename='img/bg_club.jpg') }})">
+	<div class="hero-overlay"></div>
+	<div class="container hero-section-inner">
+		<h1>Login</h1>
+		<p><small class="form-text">Login using a social media profile</small></p>
+		<div class="row">
+			<div class="col-md-4 offset-md-4">
+          		<div id="signInButton">
+		          	<span class="g-signin"
+		            data-scope="openid email"
+		            data-clientid="292286916819-5los18q6tfc4sd79rfnvobr9pvnjltam.apps.googleusercontent.com"
+		            data-redirecturi="postmessage"
+		            data-accesstype="offline"
+		            data-cookiepolicy="single_host_origin"
+		            data-callback="signInCallback"
+		            data-approvalprompt="force">
+		          	</span>
+        		</div>
+        		<div id="result" data-loginstate="{{STATE}}"></div>
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock %}
+{% block scriptFooter %}
+<script src="{{ url_for('static', filename='js/loginScript-min.js') }}"> </script>
+{% endblock %}
